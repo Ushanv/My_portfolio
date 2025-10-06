@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usha N V | Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+        /* Global */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #0f0f0f;
+            color: #fff;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Background Animation */
+        .background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: radial-gradient(circle, #1a1a1a, #0f0f0f);
+            overflow: hidden;
+        }
+
+        .circle {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 111, 97, 0.2);
+            animation: float 15s infinite;
+        }
+
+        .circle:nth-child(1) {
+            width: 120px;
+            height: 120px;
+            top: 20%;
+            left: 10%;
+            animation-duration: 20s;
+        }
+
+        .circle:nth-child(2) {
+            width: 80px;
+            height: 80px;
+            top: 50%;
+            left: 60%;
+            animation-duration: 25s;
+        }
+
+        .circle:nth-child(3) {
+            width: 200px;
+            height: 200px;
+            top: 70%;
+            left: 20%;
+            animation-duration: 30s;
+        }
+
+        .circle:nth-child(4) {
+            width: 150px;
+            height: 150px;
+            top: 30%;
+            left: 80%;
+            animation-duration: 18s;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0) rotate(0);
+            }
+
+            50% {
+                transform: translateY(-50px) rotate(180deg);
+            }
+
+            100% {
+                transform: translateY(0) rotate(360deg);
+            }
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(15, 15, 15, 0.85);
+            padding: 15px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            backdrop-filter: blur(6px);
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #FF6F61;
+        }
+
+        nav a {
+            margin-left: 25px;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #FF6F61;
+        }
+
+        /* Sections */
+        section {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 100px 20px 50px;
+            text-align: center;
+        }
+
+        section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #FF6F61;
+        }
+
+        section p {
+            max-width: 700px;
+            line-height: 1.6;
+            font-size: 1.1rem;
+        }
+
+        /* Home */
+        #home h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            animation: fadeInDown 1.5s;
+        }
+
+        #typing {
+            color: #FF6F61;
+            font-weight: 600;
+            font-size: 1.4rem;
+        }
+
+        #home button {
+            margin-top: 30px;
+            padding: 12px 25px;
+            background: #FF6F61;
+            color: #fff;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: 0.3s;
+        }
+
+        #home button:hover {
+            background: #ff3b1f;
+        }
+
+        /* Education */
+        #education {
+            background: #1a1a1a;
+            padding: 60px 20px;
+            border-radius: 15px;
+            margin: 50px 0;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+        }
+
+        #education h2 {
+            font-size: 2.5rem;
+            color: #FF6F61;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .education-list {
+            list-style: none;
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 0;
+        }
+
+        .education-item {
+            background: #262626;
+            margin: 15px 0;
+            padding: 20px;
+            border-radius: 12px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .education-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(255, 111, 97, 0.4);
+        }
+
+        .education-item b {
+            color: #FF6F61;
+            font-size: 1.2rem;
+        }
+
+        .education-item span {
+            display: block;
+            margin-top: 5px;
+            font-size: 0.95rem;
+            color: #ccc;
+        }
+
+
+        /* Projects */
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+            width: 100%;
+            max-width: 1000px;
+        }
+
+        .project-card {
+            background: #1a1a1a;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+            transition: transform 0.4s, box-shadow 0.4s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px) scale(1.05);
+            box-shadow: 0 12px 24px rgba(255, 111, 97, 0.4);
+        }
+
+        /* Skills */
+        /* .skills-list {
+      display:flex; flex-wrap:wrap;
+      justify-content:center; gap:15px;
+      margin-top:20px;
+    } */
+
+    /* Skills Section */
+#skills {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+  max-width: 800px;
+  margin: 30px auto;
+}
+
+.skill-card {
+  background: #1a1a1a;
+  padding: 20px;
+  border-radius: 12px;
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 500;
+  transition: transform 0.3s, box-shadow 0.3s;
+  border: 1px solid rgba(255, 111, 97, 0.3);
+}
+
+.skill-card:hover {
+  transform: translateY(-8px) scale(1.05);
+  box-shadow: 0 8px 18px rgba(255, 111, 97, 0.5);
+  border-color: #FF6F61;
+}
+
+.skill-icon {
+  font-size: 1.8rem;
+  color: #FF6F61;
+  margin-bottom: 10px;
+  display: block;
+}
+
+        .skills-list {
+            display: flex;
+            flex-direction: column;
+            /* stack vertically */
+            align-items: center;
+            /* center align */
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .skill {
+            background: #FF6F61;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        .skill:hover {
+            background: #ff3b1f;
+        }
+
+        /* Contact */
+        #contact form {
+            display: flex;
+            flex-direction: column;
+            max-width: 500px;
+            width: 100%;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        #contact input,
+        #contact textarea {
+            padding: 12px;
+            border-radius: 10px;
+            border: none;
+            font-size: 1rem;
+            background: #1f1f1f;
+            color: #fff;
+        }
+
+        #contact button {
+            padding: 12px;
+            border-radius: 25px;
+            border: none;
+            background: #FF6F61;
+            color: #fff;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        #contact button:hover {
+            background: #ff3b1f;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #111;
+            color: #aaa;
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive */
+        @media(max-width:768px) {
+            header {
+                padding: 10px 20px;
+            }
+
+            #home h1 {
+                font-size: 2.2rem;
+            }
+
+            section h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Animated Background -->
+    <div class="background">
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="logo">Usha N V</div>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#about">ABOUT</a>
+            <a href="#education">EDUCATION</a>
+            <a href="#projects">PROJECTS</a>
+            <a href="#skills">SKILLS</a>
+            <a href="#certifications">CERTIFICATIONS</a>
+            <a href="#contact">CONTACT</a>
+        </nav>
+    </header>
+
+    <!-- Home -->
+    <section id="home">
+        <h1>Hello, I'm Usha N V</h1>
+        <p><span id="typing"></span></p>
+        <!-- <button onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Hire Me</button> -->
+    </section>
+
+    <!-- About -->
+    <section id="about">
+        <h2>About Me</h2>
+        <img src="Profile.png" alt="Usha N V"
+            style="width:150px; height:150px; border-radius:50%; margin-bottom:20px; border:3px solid #FF6F61;">
+        <p>I'm an aspiring <b>Full Stack Developer</b> and <b>AI/ML Engineer</b> with strong programming skills in
+            Python, HTML, CSS and SQL.
+            <!-- Experienced in Django, React, and building machine learning models. -->
+            I enjoy merging intelligent systems with scalable web solutions.</p>
+    </section>
+
+    <!-- education -->
+    <!-- Education -->
+    <section id="education">
+        <h2>Education</h2>
+        <ul class="education-list">
+            <li class="education-item">
+                <b>BE in Computer Science Engineering</b>
+                <span>Dr T Thimmaiah Institute Of Technology (2025) – CGPA: 8.6</span>
+            </li>
+            <li class="education-item">
+                <b>Class 12</b>
+                <span>SBMJ INDP PU College (2021) – 79%</span>
+            </li>
+            <li class="education-item">
+                <b>Class 10</b>
+                <span>Sri BVN Central Public School (2019) – 71%</span>
+            </li>
+        </ul>
+    </section>
+
+
+
+    <!-- Projects -->
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="project-grid">
+            <div class="project-card">
+                <h3>🔥 Forest Fire Prediction (CNN)</h3>
+                <p>Built a CNN-based model achieving 92% accuracy in predicting fire-prone zones. Implemented real-time
+                    alerting using TensorFlow.</p>
+            </div>
+            <div class="project-card">
+                <h3>👁️ Retinal Image Enhancement</h3>
+                <p>Deep learning-based system for Diabetic Retinopathy diagnosis. Enhanced image quality and achieved
+                    85% F1-score with CNN layers.</p>
+                <a href="https://github.com/Ushanv/Hybrid-Diabetic-Retinopathy/" target="_blank"
+                    style="color:#FF6F61; font-weight:bold;">🔗 View on GitHub</a>
+            </div>
+            <!-- <div class="project-card">
+        <h3>💻 Portfolio Website</h3>
+        <p>A modern animated personal portfolio showcasing skills, projects, and certifications. Built with HTML, CSS, and JavaScript.</p>
+      </div> -->
+        </div>
+    </section>
+
+    <!-- Skills -->
+    <!-- <section id="skills">
+        <h2>Skills</h2>
+        <div class="skills-list">
+            <div class="skill">Python</div> <br>
+            
+            <div class="skill">HTML </div> <br>
+            <div class="skill">CSS </div> <br>
+            <div class="skill">Machine Learning </div> <br>
+            <div class="skill">Deep learning </div>
+            
+            <div class="skill">SQL</div>
+           
+        </div>
+    </section> -->
+
+    <!-- Skills -->
+<section id="skills">
+  <h2>Skills</h2>
+  <div class="skills-grid">
+    <div class="skill-card">
+      <i class="fab fa-python skill-icon"></i>
+      Python
+    </div>
+    <div class="skill-card">
+      <i class="fab fa-html5 skill-icon"></i>
+      HTML 
+    </div>
+    <div class="skill-card">
+      <i class="fab fa-html5 skill-icon"></i>
+       CSS
+    </div>
+    <div class="skill-card">
+      <i class="fas fa-database skill-icon"></i>
+      SQL & MySQL
+    </div>
+    <!-- <div class="skill-card">
+      <i class="fas fa-code skill-icon"></i>
+      Django
+    </div> -->
+    <!-- <div class="skill-card">
+      <i class="fab fa-react skill-icon"></i>
+      React
+    </div> -->
+    <!-- <div class="skill-card">
+      <i class="fas fa-robot skill-icon"></i>
+      TensorFlow & ML
+    </div> -->
+    <!-- <div class="skill-card">
+      <i class="fas fa-project-diagram skill-icon"></i>
+      Data Analysis
+    </div> -->
+  </div>
+</section>
+
+
+    <!-- Certifications -->
+    <section id="certifications">
+        <h2>Certifications</h2>
+        <div class="project-grid">
+            <div class="project-card">
+                <h3>Data Science Bootcamp</h3>
+                <p>Hands-on course on data preprocessing, feature engineering, model training, and evaluation using
+                    Python, Pandas, NumPy, and Scikit-learn.</p>
+            </div>
+            <div class="project-card">
+                <h3>AI-ML Virtual Internship (AICTE - Eduskill)</h3>
+                <p>Gained hands-on experience in supervised learning, CNNs, and ML project deployment using Python and
+                    Scikit-learn.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <form>
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea rows="5" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+        <!-- <p style="margin-top:20px;">
+      📧 <a href="mailto:https://ushanv267@gmail.com">ushanv267@gmail.com</a> |  
+      🔗 <a href="https://linkedin.com/in/ushanv">LinkedIn</a> |  
+      💻 <a href="https://github.com/Ushanv">GitHub</a>
+      
+    </p> -->
+        <p style="margin-top:20px;">
+            <a href="mailto:ushanv267@gmail.com" target="_blank"
+                style="color:#FF6F61; margin:0 15px; font-size:1.5rem;">
+                <i class="fas fa-envelope"></i>
+            </a>
+            
+            <a href="https://linkedin.com/in/ushanv" target="_blank"
+                style="color:#FF6F61; margin:0 15px; font-size:1.5rem;">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://github.com/Ushanv" target="_blank" style="color:#FF6F61; margin:0 15px; font-size:1.5rem;">
+                <i class="fab fa-github"></i>
+            </a>
+        </p>
+
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        &copy; 2025 Usha N V. Built with ❤️ and creativity.
+    </footer>
+
+    <!-- Typing Effect Script -->
+    <script>
+        const roles = ["Full Stack Developer", "AI/ML Engineer", "Data Science Enthusiast"];
+        let i = 0, j = 0, currentRole = "", isDeleting = false;
+        const typingElement = document.getElementById("typing");
+
+        function typeEffect() {
+            currentRole = roles[i];
+            typingElement.innerHTML = currentRole.substring(0, j) + "|";
+
+            if (!isDeleting && j < currentRole.length) { j++; setTimeout(typeEffect, 150); }
+            else if (isDeleting && j > 0) { j--; setTimeout(typeEffect, 80); }
+            else { isDeleting = !isDeleting; if (!isDeleting) i = (i + 1) % roles.length; setTimeout(typeEffect, 1000); }
+        }
+        typeEffect();
+    </script>
+
+</body>
+
+</html>
