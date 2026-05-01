@@ -1,58 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Usha N V Portfolio</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Usha N V Portfolio</title>
 
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            background: #f4f4f4;
-        }
+<style>
+body {
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    background: #f0f2f5;
+}
 
-        header {
-            background: #333;
-            color: white;
-            text-align: center;
-            padding: 20px;
-        }
+/* HEADER */
+header {
+    background: linear-gradient(135deg, #4facfe, #00f2fe);
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+}
 
-        section {
-            padding: 20px;
-        }
+header h1 {
+    margin: 0;
+    font-size: 32px;
+}
 
-        h2 {
-            border-bottom: 2px solid #333;
-            padding-bottom: 5px;
-        }
+header p {
+    margin-top: 10px;
+    font-size: 18px;
+}
 
-        .project {
-            background: white;
-            padding: 15px;
-            margin: 15px 0;
-            border-left: 5px solid #007bff;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
+/* SECTION */
+section {
+    padding: 40px 20px;
+    max-width: 900px;
+    margin: auto;
+}
 
-        a {
-            color: #007bff;
-            text-decoration: none;
-            font-weight: bold;
-        }
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
 
-        a:hover {
-            text-decoration: underline;
-        }
+/* CARD STYLE */
+.project {
+    background: white;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
 
-        footer {
-            text-align: center;
-            padding: 10px;
-            background: #333;
-            color: white;
-        }
-    </style>
+.project:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+/* BUTTON LINK */
+.project a {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 15px;
+    background: #4facfe;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.project a:hover {
+    background: #007bff;
+}
+
+/* SKILLS */
+ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0;
+}
+
+ul li {
+    list-style: none;
+    background: #4facfe;
+    color: white;
+    margin: 5px;
+    padding: 8px 12px;
+    border-radius: 5px;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 15px;
+    background: #333;
+    color: white;
+}
+</style>
+
 </head>
 
 <body>
@@ -64,20 +110,20 @@
 
 <section>
     <h2>About Me</h2>
-    <p>
+    <p style="text-align:center;">
         Aspiring Data Analyst skilled in Python, SQL, and Power BI with hands-on experience 
-        in data cleaning, analysis, and visualization. Passionate about extracting insights 
-        and solving real-world problems using data.
+        in data analysis and visualization.
     </p>
 </section>
 
 <section>
     <h2>Skills</h2>
     <ul>
-        <li>Python (Pandas, NumPy)</li>
-        <li>SQL (Joins, Aggregations)</li>
+        <li>Python</li>
+        <li>SQL</li>
         <li>Power BI</li>
-        <li>Data Cleaning & EDA</li>
+        <li>Pandas</li>
+        <li>EDA</li>
     </ul>
 </section>
 
@@ -86,36 +132,32 @@
 
     <div class="project">
         <h3>Sales Data Analysis</h3>
-        <p>Analyzed retail sales data to identify trends, profitability insights, and loss-making products.</p>
-        <p><strong>Tools:</strong> Python, Pandas, Matplotlib</p>
-        <a href="https://github.com/Ushanv/sales-data-analysis" target="_blank">View on GitHub</a>
+        <p>Analyzed sales data to find trends and profitability insights.</p>
+        <a href="https://github.com/Ushanv/sales-data-analysis" target="_blank">View Project</a>
     </div>
 
     <div class="project">
         <h3>E-Commerce SQL Analysis</h3>
-        <p>Designed relational database and performed SQL queries to analyze sales trends and customer behavior.</p>
-        <p><strong>Tools:</strong> MySQL</p>
-        <a href="https://github.com/Ushanv/sql-ecommerce-analysis" target="_blank">View on GitHub</a>
+        <p>Performed SQL analysis to find top customers and sales trends.</p>
+        <a href="https://github.com/Ushanv/sql-ecommerce-analysis" target="_blank">View Project</a>
     </div>
 
     <div class="project">
-        <h3>E-Commerce Sales Dashboard</h3>
-        <p>Developed interactive Power BI dashboard to analyze sales, profit, and customer trends.</p>
-        <p><strong>Tools:</strong> Power BI</p>
+        <h3>Power BI Dashboard</h3>
+        <p>Built interactive dashboard for sales and profit analysis.</p>
     </div>
 
     <div class="project">
         <h3>Forest Fire Prediction</h3>
-        <p>Built CNN model for image classification to detect forest fire with high accuracy.</p>
-        <p><strong>Tools:</strong> Python, TensorFlow, Keras</p>
+        <p>Developed CNN model for fire detection.</p>
     </div>
 
 </section>
 
 <section>
     <h2>Contact</h2>
-    <p>Email: ushanv267@gmail.com</p>
-    <p>
+    <p style="text-align:center;">
+        <a href="mailto:ushanv267@gmail.com">Email</a> |
         <a href="https://github.com/Ushanv" target="_blank">GitHub</a> |
         <a href="https://linkedin.com/in/usha-n-v" target="_blank">LinkedIn</a>
     </p>
