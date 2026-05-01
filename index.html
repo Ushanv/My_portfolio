@@ -12,6 +12,27 @@ body {
     background: #f0f2f5;
 }
 
+/* DARK MODE */
+.dark {
+    background: #121212;
+    color: white;
+}
+.dark .project {
+    background: #1e1e1e;
+}
+
+/* NAVBAR */
+nav {
+    background: #333;
+    padding: 10px;
+    text-align: center;
+}
+nav a {
+    color: white;
+    margin: 10px;
+    text-decoration: none;
+}
+
 /* HEADER */
 header {
     background: linear-gradient(135deg, #4facfe, #00f2fe);
@@ -20,14 +41,9 @@ header {
     padding: 40px 20px;
 }
 
-header h1 {
-    margin: 0;
-    font-size: 32px;
-}
-
-header p {
-    margin-top: 10px;
-    font-size: 18px;
+header img {
+    width: 120px;
+    border-radius: 50%;
 }
 
 /* SECTION */
@@ -39,25 +55,25 @@ section {
 
 h2 {
     text-align: center;
-    margin-bottom: 20px;
 }
 
-/* CARD STYLE */
+/* PROJECT CARD */
 .project {
     background: white;
     padding: 20px;
     margin: 20px 0;
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: 0.3s;
+    animation: fadeIn 1s ease;
 }
 
 .project:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.3);
 }
 
-/* BUTTON LINK */
+/* BUTTON */
 .project a {
     display: inline-block;
     margin-top: 10px;
@@ -66,11 +82,6 @@ h2 {
     color: white;
     border-radius: 5px;
     text-decoration: none;
-    transition: 0.3s;
-}
-
-.project a:hover {
-    background: #007bff;
 }
 
 /* SKILLS */
@@ -78,9 +89,7 @@ ul {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    padding: 0;
 }
-
 ul li {
     list-style: none;
     background: #4facfe;
@@ -90,6 +99,12 @@ ul li {
     border-radius: 5px;
 }
 
+/* ANIMATION */
+@keyframes fadeIn {
+    from {opacity:0; transform: translateY(20px);}
+    to {opacity:1; transform: translateY(0);}
+}
+
 /* FOOTER */
 footer {
     text-align: center;
@@ -97,18 +112,42 @@ footer {
     background: #333;
     color: white;
 }
-</style>
 
+html {
+    scroll-behavior: smooth;
+}
+</style>
 </head>
 
 <body>
 
+<!-- NAVBAR -->
+<nav>
+  <a href="#about">About</a>
+  <a href="#projects">Projects</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<!-- HEADER -->
 <header>
     <h1>Usha N V</h1>
     <p>Data Analyst | Python | SQL | Power BI</p>
+
+    <img src="profile.jpg" alt="profile">
+
+    <br><br>
+
+    <a href="resume.pdf" download style="background:white;color:black;padding:10px;border-radius:5px;text-decoration:none;">
+    ⬇ Download Resume
+    </a>
+
+    <br><br>
+
+    <button onclick="toggleMode()">🌙 Toggle Mode</button>
 </header>
 
-<section>
+<!-- ABOUT -->
+<section id="about">
     <h2>About Me</h2>
     <p style="text-align:center;">
         Aspiring Data Analyst skilled in Python, SQL, and Power BI with hands-on experience 
@@ -116,6 +155,7 @@ footer {
     </p>
 </section>
 
+<!-- SKILLS -->
 <section>
     <h2>Skills</h2>
     <ul>
@@ -127,19 +167,20 @@ footer {
     </ul>
 </section>
 
-<section>
+<!-- PROJECTS -->
+<section id="projects">
     <h2>Projects</h2>
 
     <div class="project">
         <h3>Sales Data Analysis</h3>
-        <p>Analyzed sales data to find trends and profitability insights.</p>
-        <a href="https://github.com/Ushanv/sales-data-analysis" target="_blank">View Project</a>
+        <p>Analyzed retail sales data to identify trends and profitability insights.</p>
+        <a href="https://github.com/Ushanv/sales-data-analysis">View Project</a>
     </div>
 
     <div class="project">
         <h3>E-Commerce SQL Analysis</h3>
-        <p>Performed SQL analysis to find top customers and sales trends.</p>
-        <a href="https://github.com/Ushanv/sql-ecommerce-analysis" target="_blank">View Project</a>
+        <p>Used SQL to analyze sales, customers, and category performance.</p>
+        <a href="https://github.com/Ushanv/sql-ecommerce-analysis">View Project</a>
     </div>
 
     <div class="project">
@@ -154,18 +195,26 @@ footer {
 
 </section>
 
-<section>
+<!-- CONTACT -->
+<section id="contact">
     <h2>Contact</h2>
     <p style="text-align:center;">
-        <a href="mailto:ushanv267@gmail.com">Email</a> |
-        <a href="https://github.com/Ushanv" target="_blank">GitHub</a> |
-        <a href="https://linkedin.com/in/usha-n-v" target="_blank">LinkedIn</a>
+        <a href="mailto:ushanv267@gmail.com">📩 Email</a> |
+        <a href="https://github.com/Ushanv">GitHub</a> |
+        <a href="https://linkedin.com/in/usha-n-v">LinkedIn</a>
     </p>
 </section>
 
+<!-- FOOTER -->
 <footer>
     <p>© 2026 Usha N V</p>
 </footer>
+
+<script>
+function toggleMode() {
+    document.body.classList.toggle("dark");
+}
+</script>
 
 </body>
 </html>
